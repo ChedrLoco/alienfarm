@@ -1,0 +1,16 @@
+extends ../shared/template
+block title
+  h1 Aliens
+block content
+  h2 This is the list of Most Wanted Aliens
+  .container
+
+    each alien in aliens
+      .row
+        .col-xs-4
+          label= alien.name
+          label= alien.planet
+          a(href='/aliens/' + alien.id)= alien.name
+          img.img-responsive.thumbnail.alien(src=alien.photo height='300' width='300')
+        .col-xs-4
+        .col-xs-4
